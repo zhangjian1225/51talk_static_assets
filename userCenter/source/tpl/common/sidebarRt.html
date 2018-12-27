@@ -1,0 +1,21 @@
+<div class="sideRt">
+  <% if(data.blackbirdcode.length) {%>
+    <ul class="mdT">
+      <li><img src="<%= data.blackbirdcode %>" alt=""></li>
+      <li>您的专属课程顾问</li>
+      <li>扫描微信二维码</li>
+      <li>添加您的专属课程顾</li>
+    </ul>
+  <% } %>
+  <ul class="mdC">
+    <li><img src="<%= data.qcode %>" alt=""></li>
+    <li><%= data.title %></li>
+    <li>提供上课提醒</li>
+    <li>咨询客服等服务</li>
+  </ul>
+  <ul class="mdB">
+    <li>服务中心</li>
+    <li><a href="<%= data.service_center %>" target="_blank">点击进入></a></li>
+    <li><img src="../../images/common/ex_service.png" alt=""></li>
+  </ul>
+</div>

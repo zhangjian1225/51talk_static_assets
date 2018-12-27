@@ -1,0 +1,14 @@
+<div class="full">应付总额：<b>¥ <span class='count'><%=count%></span></b>
+</div>
+<div class="pay_tit pay_tit1"><b>支付方式</b></div>
+<div class="pay_list pay_list1">
+        <ul class="f-cb">
+            <li class="bankItem"  onclick = "__sdonclick('<%= list[0].bank %>');">
+                <label>
+                        <div class="more_bank">银行汇款</div>
+                        <input type="radio" name="payMethod" value="<%=list[0].bank%>">
+                </label>
+            </li>
+        </ul>
+    </div>
+</div>

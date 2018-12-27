@@ -1,0 +1,1 @@
+"use strict";define("common/course",[],function(e,c,n){alert(111)});

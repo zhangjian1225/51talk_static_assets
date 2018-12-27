@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>adultPackage/index_monthly_learning_effect.css">
+    <script type="text/javascript">
+      window.static_url = "../../";
+    </script>
+</head>
+<body data-init="adultPackage/indexMonthlyLearningEffect" id="container">
+    <div id="indexMonthlyLearningEffect">
+        loading...
+    </div>
+    <input type="hidden" value="point_package_10" id="point_type">
+
+<%# 以后需要去除 %>
+<%# <input type="button" value="point_package_10" id="added_object_for_bi" style="display: none;">
+<script type="text/javascript">
+  
+  function __sdonclick(btvalue) {
+    var obj_for_bi = document.getElementById("added_object_for_bi");
+    if (obj_for_bi) {
+      obj_for_bi.value = btvalue;
+      obj_for_bi.click()
+    }
+  }
+</script> %>
+</body>
+<script src="<%= jsSource2 %>" id="seajsnode"></script>
+
+</html>
+
+

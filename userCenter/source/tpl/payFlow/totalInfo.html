@@ -1,0 +1,24 @@
+<ul class="f-cb">
+    <li class="price">
+        <dl>
+            <dt id="real" class="real" real="<%= price.total_price%>">¥ <%= price.total_price.toFixed(2) %></dt>
+            
+            <dd class="<%= !price.total_discount_price?'hide':''%>">- ¥ <%= price.total_discount_price.toFixed(2) %></dd>
+            <dd class="ticket hide ">- ¥ <span>0</span></dd>
+        </dl>
+    </li>
+    <li class="label">
+        <dl>
+            <dt>总商品金额：</dt>
+            <dd class="<%= !price.total_discount_price?'hide':''%>">参与优惠：</dd>
+            <dd class="ticket hide">代金券：</dd>
+        </dl>
+    </li>
+    <li class="goodsTotal">
+        <dl>
+            <dt>
+                <%=goods%>件商品
+            </dt>
+        </dl>
+    </li>
+</ul>

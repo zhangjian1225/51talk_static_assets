@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>体验用户</title>
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>exReceive/index_method.css">
+</head>
+<body>
+  <% include ../common/header.ejs %>
+  <div class="methods" data-init="exReceive/indexSelsectTime" id="container">
+    <% include ./bannerText.ejs %>
+    <div class="content">
+      <h3>最后一步！请选择上课方式完成预约，外教将在约定的时间为学员上课</h3>
+      <ul class="mList">
+        <li>
+          <dl>
+            <dt><img src="<%=imagessrc2%>exReceive/m_logo.png" alt=""></dt>
+            <dd>AirClass在线教室</dd>
+            <dd>高清晰度视频通话，零距离连线外教<br>中英双语即时翻译，与外教对话无障碍</dd>
+          </dl>
+          <span class="select check" data-id="ac"></span>
+          <img src="<%=imagessrc2%>exReceive/m_comp.png"  alt="" class="mCompImg">
+        </li>
+        <li>
+          <dl>
+            <dt><img src="<%=imagessrc2%>exReceive/m_cls.png" alt=""></dt>
+            <dd>51Talk青少课堂</dd>
+            <dd>游戏化界面，学习更加生动有趣<br>移动课堂，随时随地互动学习</dd>
+          </dl>
+          <span class="select" data-id="ipad"></span>
+          <img src="<%=imagessrc2%>exReceive/m_ipad.png"  alt="" class="mCompImg">
+        </li>
+      </ul>
+      <div class="complete"><a href="javascript:;" class="comBtn">完成预约</a></div>
+      <input type="hidden" id="dataId" value="ac">
+    </div>
+  </div>
+</body>
+<script src="<%= jsSource2%>" id="seajsnode"></script>
+</html>

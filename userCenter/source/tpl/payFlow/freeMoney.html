@@ -1,0 +1,29 @@
+<%if(price.is_cash_down){%>
+    <div class="tit-reduce">恭喜您获得满
+        <%= price.cash_down_man%>立减
+            <%=price.cash_down_jian%>的机会！</div>
+    <%}%>
+        <%if(price.is_cmb_down){%>
+            <div class="tit-reduce">尊敬的招商银行用户您好，您已获得以85折优惠购买51Talk课程的机会，本次特价优惠不支持使用代金券。
+            </div>
+            <%}%>
+                <%if(price.is_ac_down_price){%>
+                    <div class="tit-reduce">恭喜您因为使用AC上体验课，获得额外优惠直降
+                        <%= price.ac_down_price%>元</div>
+                    <%}%>
+                        <%if(price.is_exp_user_down){%>
+                            <div class="tit-reduce">恭喜您在体验课后48小时购买课程，获得额外优惠直降
+                                <%=price.exp_user_down%>元。</div>
+                            <%}%>
+                                <%if(price.is_recommend_down){%>
+                                    <div class="tit-reduce">恭喜您因为员工推荐购买获得额外优惠直降
+                                        <%=price.recommend_down%>元。</div>
+                                    <%}%>
+                                        <%if(price.is_act_straight_down){%>
+                                            <div class="tit-reduce">恭喜您获得直降优惠
+                                                <%=price.act_straight_down%>元。</div>
+                                            <%}%>
+                                                <%if(price.is_learn_money){%>
+                                                    <div class="tit-reduce">恭喜参加“10月学霸召集令”活动，获得
+                                                        <%=price.user_learn_money.learn_money_desc%>奖学金。</div>
+                                                    <%}%>

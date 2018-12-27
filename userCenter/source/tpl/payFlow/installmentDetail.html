@@ -1,0 +1,80 @@
+<div class="wrab-mod wrab-mod1">
+    <div class="tit2">
+        分期支付说明
+    </div>
+    <%if(bank=="bdweb"){%>
+        <%if(cardrate!=0.07){%>
+            <div class="wrab-cont">
+                <dl>
+                    <dd>
+                        <span class="label">分期数：</span>
+                        <span class="month orange"><%=periodnum%></span> 期， 每期手续费为
+                        <!-- <span class="ereryMonth">¥ <i id="ereryNum"><%= Number(((count-count*0.1)*0.005)).toFixed(2) %></i></span> ，分期手续费为 <span class="fengqi">¥ <i id="fengNum"><%= Number(((count-count*0.1)*0.005)*12).toFixed(2) %></i></span>， 费率 7.00%  ( 用户承担<span class="feilv"><%= Number(cardrate*100).toFixed(2) +"%" %></span>  51Talk <span class="feilv">2.00% )</span> -->
+                        <span class="ereryMonth">¥ <i id="ereryNum"><%= Number(((count-count*firstRate)*0.005)).toFixed(2) %></i></span> ， (每期手续费 = 分期总金额*0.5%)
+                    </dd>
+                    <dd>
+                        <span class="label">支付总金额：</span>
+                        <span class="orange">¥ <i id="orangeNum"><%= Number(count+((count-count*firstRate)*0.06)).toFixed(2)%></i></span> = 
+                        <%if(firstRate!=0){%>
+                            预付款 <span class="orange" id="orangeText">¥ <i id="textNum"><%= Number(count*firstRate).toFixed(2)%></i></span> +
+                        <%}%>
+                        分期金额 <span class="orange">¥ <i id="AllorangeNum"><%= Number(count-count*firstRate).toFixed(2)%></i></span>+ 分期手续费 <span class="orange">¥ <i id="AlloranNum"><%= Number(((count-count*firstRate)*0.005)*12).toFixed(2) %></i></span>
+                    </dd>
+                    <!-- <dd>
+                        <span class="label">分期专享：</span>立减<span class="red">¥ <%= Number((count-Math.ceil(count*0.3))*cardrate).toFixed(2) %></span>
+                    </dd>
+                    <dd><span class="label">分期提示：</span>因手续费由51Talk支付，故分期不可以使用代金券</dd> -->
+                </dl>
+                <div class="monthMoney">
+                    <span class="label">每期还款金额：</span><span class="red">¥ <i id="labelNum"><%= (Number((count-count*firstRate+((count-count*firstRate)*0.005)*12)/periodnum)).toFixed(2) %></i></span>
+                </div>
+            </div>
+            <%}else{%>
+                <div class="wrab-cont">
+                    <dl>
+                        <dd>
+                            <span class="label">分期数：</span>
+                            <span class="month orange"><%=periodnum%></span> 期， 每期手续费为
+                            <span class="ereryMonth">¥  <%= Number((count-count*firstRate)/periodnum*cardrate).toFixed(2) %></span> ，分期手续费为 <span class="fengqi">¥ <%= Number((count-count*firstRate)*cardrate).toFixed(2) %></span>， 费率 <span class="feilv"><%= Number(cardrate*100).toFixed(2) +"%" %></span>
+                        </dd>
+                        <dd>
+                            <span class="label">支付总金额：</span>
+                            <span class="orange">¥ <%= Number(count+count*cardrate-count*firstRate).toFixed(2) %></span> = 
+                            <%if(firstRate!=0){%>
+                                预付款 <span class="orange" id="orangeText">¥ <i id="textNum"><%= Number(count*firstRate).toFixed(2)%></i></span> +
+                            <%}%>
+                            订单金额 <span class="orange">¥ <%= Number(count).toFixed(2)%></span> + 分期手续费 <span class="orange">¥ <%= Number((count-count*firstRate)*cardrate).toFixed(2) %></span>
+                        </dd>
+                        <dd>
+                            <span class="label">分期专享：</span>立减<span class="red">¥ <%= Number(count*cardrate).toFixed(2) %></span>
+                        </dd>
+                        <dd><span class="label">分期提示：</span>因手续费由51Talk支付，故分期不可以使用代金券</dd>
+                    </dl>
+                    <div class="monthMoney">
+                        <span class="label">每期金额：</span><span class="red">¥ <%= Number((count-count*firstRate)/periodnum).toFixed(2)%></span>
+                    </div>
+                </div>
+                <%}%>
+        <%}else{%>
+            <div class="wrab-cont">
+                <dl>
+                    <dd>
+                        <span class="label">分期数：</span>
+                        <span class="month orange"><%=periodnum%></span> 期， 每期手续费为
+                        <span class="ereryMonth">¥  <%= Number(count/periodnum*cardrate).toFixed(2) %></span> ，分期手续费为 <span class="fengqi">¥ <%= Number(count*cardrate).toFixed(2) %></span>， 费率 <span class="feilv"><%= Number(cardrate*100).toFixed(2) +"%" %></span>
+                    </dd>
+                    <dd>
+                        <span class="label">支付总金额：</span>
+                        <span class="orange">¥ <%= Number(count+count*cardrate).toFixed(2) %></span> = 订单金额 <span class="orange">¥ <%= Number(count).toFixed(2)%></span> + 分期手续费 <span class="orange">¥ <%= Number(count*cardrate).toFixed(2) %></span>
+                    </dd>
+                    <dd>
+                        <span class="label">分期专享：</span>立减<span class="red">¥ <%= Number(count*cardrate).toFixed(2) %></span>
+                    </dd>
+                    <dd><span class="label">分期提示：</span>因手续费由51Talk支付，故分期不可以使用代金券</dd>
+                </dl>
+                <div class="monthMoney">
+                    <span class="label">每期金额：</span><span class="red">¥ <%= Number(count/periodnum).toFixed(2)%></span>
+                </div>
+            </div>
+            <%}%>
+</div>

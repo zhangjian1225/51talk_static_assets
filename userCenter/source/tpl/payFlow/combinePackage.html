@@ -1,0 +1,35 @@
+<dl class="wrap-list">
+    <input type="hidden" name="is_cash_down" value="<%= is_cash_down%>">
+    <input type="hidden" name="sign" value="<%= sign%>">
+    <input type="hidden" name="gateway" value="<%=gateway%>" >
+    <input type="hidden" name="point_type" id="my_point_type" value="mix_point">
+    <input type="hidden" name="cart" id="my_cart" value="">
+
+    <dd class="item">
+            <ul class="f-cb">
+                    <li class="t1">
+                            <dl class="m-des">
+                               <dt><%=mix.point_type_name%></dt>
+                            </dl>
+                    </li>
+                    <li class="t2">
+                            <dl class="m-des">
+                                <dt><%=mix.show_name%></dt>     
+                                <!-- <dd>有效期（<%= mix.show_expire_days%>天）</dd> -->
+                            </dl>
+                    </li>
+                    <li class="t3">
+                            <dl class="m-des">
+                                    <dt>-</dt>
+                            </dl>
+                    </li>
+                    <li class="t4">
+                            <dl class="m-des">
+                                <dt class="money">
+                                    ¥ <%= mix.total_price%>
+                                </dt>
+                            </dl>
+                    </li>
+                </ul>
+    </dd>
+</dl>

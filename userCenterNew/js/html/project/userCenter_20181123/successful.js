@@ -1,0 +1,1 @@
+define("successful",["artTemplate"],function(e,t,a){var c=e("artTemplate");c.config("openTag","[["),c.config("closeTag","]]"),c.config("escape",!1);var o={event:function(){$.ajax({url:"/mock/FreeCourse/successFul",type:"GET",dataType:"json",success:function(e){$("#textbook").html(c("bookList",e.data))}})}};o.event()});

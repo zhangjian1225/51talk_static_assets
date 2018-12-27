@@ -1,0 +1,28 @@
+<h3>选择上课时间<span>(每节课25分钟)</span></h3>
+<div class="timeList">
+  <ul class="tab">
+    <% for(var i = 0; i < data.calendar_list.length; i++) { %>
+      <% if(data.calendar_list[i].is_today == 1 ) { %>
+        <li class="check" data-time="<%= data.calendar_list[i].time %>">
+      <% } else { %>
+        <li data-time="<%= data.calendar_list[i].time %>">
+      <% } %>
+        <span><%= data.calendar_list[i].week %></span>
+        <span><%= data.calendar_list[i].date %></span>
+      </li>
+    <% } %>
+  </ul>
+  <ul class="listTab">
+    <% for(var key in data.time_arr_two) { %>
+      <% if(data.time_arr_two[key].status == "off" ) { %>
+        <li data-id='<%= data.time_arr_two[key].id %>'><span class="full"><%= data.time_arr_two[key].start %>已满</span></li>
+      <% } else { %>
+        <li class="gray" data-id='<%= data.time_arr_two[key].id %>'><span><%= data.time_arr_two[key].start %></span></li>
+      <% } %>
+    <% } %>
+  </ul>
+  <p class="listTitle">很抱歉，如果您心仪的体验课时段已满，先去官网首页听听免费公开课吧！51Talk专属客服将在48小时内致电，为您预约1对1外教体验课。</p>
+  <!-- 获取信息 -->
+  <input type="hidden" id="dataTime">
+  <input type="hidden" id="dataId">
+</div>

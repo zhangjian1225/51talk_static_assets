@@ -1,0 +1,42 @@
+<div class="full">应付总额：<b>¥ <span class='count'><%=count%></span></b>
+</div>
+<%if(fullGateway){%>
+<div class="pay_tit pay_tit1"><b>通过第三方支付平台付款</b><span>（推荐）</span></div>
+<div class="pay_list pay_list1">
+    <ul class="f-cb">
+      <%_.each(fullGateway.list,function(item){%>
+        <% if(item.bank == "99bill") {%>
+          <li class="bankItem bankCheck"  onclick = "__sdonclick('<%= item.bank%>');">
+      <%}else{%>
+        <li class="bankItem"  onclick = "__sdonclick('<%= item.bank%>');">
+      <%}%>  
+          <label>
+            <input type="radio"  value="<%=item.bank%>" name="payMethod"/>
+            <img src="../../images/payFlow/bank/<%=item.pic%>">
+            <%if(item.bank=="alipay" || item.bank=="weixin"){%>
+              <div class="isScan">扫码支付</div>
+            <%}%>
+          </label>     
+        </li>
+      <%})%>
+        
+    </ul>
+</div>
+<%}%>
+<div class="pay_tit  pay_tit2"><b>通过网银付款</b><span>（支付全国各地17家银行）</span></div>
+<div class="pay_list">
+    <ul class="f-cb">
+        <% if(fullEbank){%>
+        <%_.each(fullEbank.list,function(item){%>
+            <li class="bankItem bankCheck" onclick = "__sdonclick('<%= item.bank%>');">
+                <label>
+                        <input type="radio"  value="<%=item.bank%>" name="payMethod"/>
+                        <img src="../../images/payFlow/bank/<%=item.pic%>">
+                </label>
+            </li>
+        <%})%>
+        <%}%>
+    </ul>
+    <!-- 2018.7.4 add -->
+    <p id="explainT" style="color:red; font-size:18px; text-align:center; display:none;">*快钱支付请使用IE浏览器，确保您的账户更安全！</p>
+</div>

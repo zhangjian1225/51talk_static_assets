@@ -1,0 +1,211 @@
+@imgPath: '../../images/';
+body{
+    background-color: #f5f5f5;
+}
+.main{
+    width: 1000px;
+    background:#f5f5f5;
+    margin: 0 auto;
+    .u-tab{
+        width: 100%;
+        border-radius: 0 0 8px 8px;
+        tbody tr {
+            color: #000;
+            td {
+                line-height: 1.75;
+                text-align: center;
+                vertical-align: middle;
+                border-right: 1px solid #f5f5f5;
+                border-bottom: 1px solid #f5f5f5;
+                padding: 18px 20px;
+                text-align: left;
+                font-size: 14px;
+            }
+        }
+    }
+    .hide{
+        display: none;
+    }
+    .wrab-box{
+        margin-top: 20px;
+        width: 940px;
+        padding: 30px;
+       
+        background: #fff;
+        border-radius: 10px;
+        .tit{
+            color: #333;
+            font-size: 16px;
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 28px;
+        }
+        .wrab-mod{
+            border-radius: 8px;
+            width: 100%;
+            border:#ececec slid 1px;
+            .tit2{
+                background: #f8f8f8;
+                height: 60px;
+                line-height: 60px;
+                font-size: 14px;
+                border-radius: 8px 8px 0 0;
+                border:#ececec 1px solid;
+                width: 100%;
+            }
+        }
+    }
+    .wrab-box1{
+        .tip{
+            padding-top: 30px;
+            text-align: center;
+            position: relative;
+            width: 1000px;
+            left: -30px;
+            img{
+                display: block;
+                width: 80px;
+                height: 80px;
+                margin: 0 auto;
+                margin-bottom: 30px;
+            }
+            p{
+                text-align: center;
+                font-size: 30px;
+                padding-bottom: 48px;
+                color: #333;
+            }
+            border-bottom: #efefef solid 1px;
+        }
+        .list-tit{
+            height: 75px;
+            line-height: 75px;
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+        .wrab-mod1,.wrab-mod2{
+            margin-bottom: 30px;
+            .table-tit{
+                height: 58px;
+                line-height: 58px;
+                font-size: 14px;
+                font-weight: bold;
+                background: #f8f8f8;
+                border: #ececec solid 1px;
+                text-indent: 20px;
+                border-radius: 8px 8px 0 0;
+                border-collapse: separate;
+                color: #333;
+            }
+            .wrab-talble{
+                border: #ececec solid 1px;
+                border-top: none;
+                border-radius:0 0 8px 8px;
+            }
+            
+        }
+        .wrab-mod2{
+            margin-bottom: 0;
+        }
+    }
+    .wrab-box2{
+        padding-bottom: 0;
+        .concat-list{
+            padding-top: 30px;
+            li{
+                display: inline-block;
+                width: 418px;
+                float: left;
+                margin-bottom: 60px;
+                margin-left: 33px;
+                img{
+                    float: left;
+                }
+                dl{
+                    float: left;
+                    margin-left: 20px;
+                    dt{
+                        color: #333;
+                        font-weight: bold;
+                        margin-bottom: 24px;
+                        font-weight: bold;
+                    }
+                    dd{
+                        line-height: 14px;
+                        font-size: 12px;
+                        margin-bottom: 14px;
+                        span{
+                            font-size: 6px;
+                            padding-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .orderClass{
+        display: block;
+        width: 186px;
+        height: 50px;
+        line-height: 50px;
+        margin: 0 auto;
+        margin-top: 30px;
+        background: #ffc600;
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-bottom: 256px;
+        border-radius: 8px;
+        &:hover{
+            color: #fff;
+        }
+    }
+}
+
+.redColor{
+    color:#ff5c41 !important;
+}
+.main .wrab-course{
+    padding-top: 0;
+    
+    .list-tit{
+        font-weight: normal;
+        margin-bottom: 20px;
+    }
+    .course-box{
+        height:600px;
+        color: #333333;
+        background: url("@{imgPath}payFlow/step_bg.jpg") no-repeat 15px 0;
+        .course-detail{
+            padding-left: 94px;
+            .course-time{
+                height: 156px;
+            }
+            .course-team{
+                height: 296px;
+                .wx_icon{
+                    display: block;
+                    border: 1px solid #e0e0e0;
+                    border-radius: 4px;
+                    width: 140px;
+                    height: 140px;
+                    margin-top: 20px;
+                }
+            }
+            .begin-class{
+                height: 180px;
+            }
+            .title{
+                font-size: 16px;
+                font-weight: bold;
+                line-height: 52px;
+            }
+            p{
+                line-height: 34px;
+                font-size: 14px;
+            }
+        }
+    }
+}

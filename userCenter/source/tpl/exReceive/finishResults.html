@@ -1,0 +1,65 @@
+<div class="results">
+  <h3>
+      最近一次外教课上课记录
+  </h3>
+  <div class="lists">
+    <h4>
+      <i></i>
+      <%= data.show_time_for_stu %>
+      <a href="javascript:;" class="evlBtn">1对1外教体验课</a>
+    </h4>
+    <dl>
+      <% if(data.status == "t_absent") {%> <!-- 老师缺席 -->
+        <dt class="absent"></dt>
+      <% } else if(data.status == "s_absent"){ %> <!-- 学生缺席 -->
+        <dt class="absent stuAbsent"></dt>
+      <% } else if(data.report_new.length > 0){ %> <!-- 级别 -->
+        <dt><span>您的级别<br><i>Level<%= data.level_auto_user %></i></span></dt>
+      <% } else{ %> <!-- 测试报告生成中 -->
+        <dt><span>评测报告<br>正在生成中<br>...</span></dt>
+      <% } %>
+      <dd class="ts"><%= data.course_name %></dd>
+      <dd><%= data.course_name_en_us %></dd>
+      <dd class="tt">
+        <% if(data.teacher_url == "") {%> 
+          <img src="<%= data.tea_pic %>" alt="">
+        <% } else { %>
+          <a href="<%= data.teacher_url %>" target="_brank"><img src="<%= data.tea_pic %>" alt=""></a>
+        <% } %>
+        <%= data.tea_name %>
+      </dd>
+    </dl>
+  </div>
+  <div class="basicList">
+    <ul class="preList">
+        <% if((data.status == "t_absent" || data.status == "s_absent")) {%> 
+          <% if(data.content == 0){ %> <!-- 无卡缺席 -->
+            <li class="courseTel">请联系客服 4000-515151 再约一节</li>
+          <% } else { %> <!-- 缺席 -->
+            <li class="courseLi check"><a href="http://trial.51talk.com/trial/reserve" class="courseBtn">再约一节</a></li>  
+          <% } %>
+        <% } else{ %> <!-- 是否有级别 -->
+          <% if(data.report_new.length > 0) {%> <!-- 级别 -->
+            <li class="check"><a href="<%= data.report_new%>" target="_blank" onclick = "__sdonclick('checkreport');" class="see" ><i></i>查看体验报告</a></li>
+          <% } %>
+          <% if(data.review_url.have == "y") {%>  <!-- 是否有课后测试 -->
+            <li><a href="<%= data.review_url.url %>" onclick = "__sdonclick('afterexercise');" class="classTest" ><i></i>课后测试题</a></li>
+          <% } %>
+          <% if(data.record_url.length > 0) {%> <!-- 是否课程回放 -->
+            <li class="recordHide"><a href="<%= data.record_url %>" target="_blank" onclick = "__sdonclick('playback');"  class="playback" ><i></i>课程回放</li>
+          <% } else{ %>
+            <li class="recordHide notCheck">
+              <a href="javascript:;" class="playback"><i></i>课程回放
+                <div class="modiLayer">
+                  <div class="layer">
+                    <i></i>
+                    <span>视频将在上课结束后的24小时内生成，如一直未生成，则可能是由于网络问题或语音通道不支持导致未录屏成功。</span>
+                  </div>
+                </div>
+              </a>
+            </li> 
+          <% } %>
+        <% } %>  
+    </ul>
+  </div>
+</div> 

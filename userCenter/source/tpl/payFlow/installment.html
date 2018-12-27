@@ -1,0 +1,22 @@
+<div class="full">应付总额：<b>¥ <span class='count'><%=count%></span></b>
+</div>
+<div class="pay_tit pay_tit1"><b>支付方式</b></div>
+<div class="pay_list pay_list1">
+    <ul class="f-cb">
+        <%_.each(list,function(item,index){%>
+            <% if(item.bank == "bdweb") {%>
+              <li class="bankItem bdwebBank" onclick="__sdonclick('<%= item.bank%>');">
+            <%}else{%>
+              <li class="bankItem" onclick="__sdonclick('<%= item.bank%>');">
+            <%}%>
+                <label>
+                  <img src="../../images/payFlow/bank/<%=item.pic%>.png">
+                  <input type="radio" value="<%=item.bank%>" name="payMethod" cardRate="<%=item.cardRate%>" periodNum="<%= item.periodNum%>" firstRate="<%= item.firstRate%>"/>
+                </label>
+            </li>
+            <%});%>
+    </ul>
+</div>
+<div class="pay_tit  pay_tit2"><b>支付步骤</b></div>
+<div class="pay_tit  pay_tit3"><b>1.选择支付银行</b><b>2.跳转至所选银行分期付款页面完成支付</b></div>
+<div id="installmentDetail"></div>

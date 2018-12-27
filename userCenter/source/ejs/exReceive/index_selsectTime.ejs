@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>体验用户</title>
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>exReceive/index_selsectTime.css">
+</head>
+<body data-init="exReceive/indexSelsectTime" id="container">
+  <% include ../common/header.ejs %>
+  <div class="selTime">
+    <% include ./bannerText.ejs %>
+    <div class="content">
+      <h3>选择上课时间<span>(每节课25分钟)</span></h3>
+      <div class="timeList">
+        <ul class="tab">
+          <li class="check">
+            <span>今天</span>
+            <span>9月6日</span>
+          </li>
+          <li>
+            <span>明天</span>
+            <span>9月7日</span>
+          </li>
+          <li>
+            <span>星期三</span>
+            <span>9月8日</span>
+          </li>
+          <li>
+            <span>星期四</span>
+            <span>9月9日</span>
+          </li>
+          <li>
+            <span>星期五</span>
+            <span>9月10日</span>
+          </li>
+          <li>
+            <span>星期六</span>
+            <span>9月11日</span>
+          </li>
+          <li>
+            <span>星期日</span>
+            <span>9月12日</span>
+          </li>
+        </ul>
+        <ul class="listTab">
+          <li><span class="check">15:30</span></li>
+          <li><span class="full">15:30已满</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+          <li class="gray"><span>15:30</span></li>
+        </ul>
+        <p class="listTitle">很抱歉，如果您心仪的体验课时段已满，先去听听免费公开课吧！51Talk专属客服将在48小时内致电，为您预约1对1外教体验课。</p>
+        <!-- 获取信息 -->
+        <input type="hidden" id="dataTime">
+        <input type="hidden" id="dataId">
+      </div>
+      <h3>手机验证<span>(便于接收上课短信通知)</span></h3>
+      <div class="form">
+        <ul>
+          <li>
+            <span class="lt">手机号码：</span>
+            <div class="input">
+              <input type="text" placeholder="请输入手机号" class="mobile">
+            </div>
+          </li>
+          <li>
+            <span class="lt">验证码：</span>
+            <div class="input">
+              <input type="text" class="imgcode" placeholder="请输入图形验证码">
+              <span class="code"><img id="verifycode" src="http://www.51talk.com/user/verify.php"  alt="单击更换验证码"  class="codeBtn"></span>
+              <span class="getCodeBtn">看不清，换一张</span>
+            </div>
+          </li>
+          <li>
+            <span class="lt"></span>
+            <div class="input">
+              <input type="text" class="mobilecode" placeholder="请输入短信验证码">
+              <span class="code smsBtn">获取验证码</span>
+              <!-- <span>短信收不到? 尝试语音验证码</span> -->
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="next"><a href="javascript:;" class="nextBtn">下一步</a></div>
+    </div>
+  </div>
+</body>
+<script src="<%= jsSource2%>" id="seajsnode"></script>
+</html>

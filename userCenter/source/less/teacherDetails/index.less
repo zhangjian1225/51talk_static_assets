@@ -1,0 +1,896 @@
+
+@import "../common/courseinfo.less";
+@imgPath: '../../images/';
+
+body{
+  background-color: #efefef;
+}
+.teacher-details{
+  width: 1000px;
+  margin:0 auto;
+  .s-t-top{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    .s-t-top-details{
+      padding:30px 0 30px 30px;
+    }
+    .s-t-top-left{
+      width: 750px;
+      height: 150px;
+      float: left;
+    }
+    .teacher-left-left{
+      width: 140px;
+      float: left;
+      .teacher-img{
+        width: 100%;
+        height: 110px;
+        text-align: center;
+        overflow: hidden;
+        box-shadow: 0px 0  #999 inset;
+        position: relative;
+        margin-bottom: 12px;
+        .user-img{
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+        .user-shadow-img{
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          margin-left: -68px;
+        }
+      }
+    }
+    .mp3{
+      height: 16px;
+      padding-left: 7px;
+      .mp3-start{
+        width: 8px;
+        height: 100%;
+        float: left;
+        cursor: pointer;
+        margin-right: 5px;
+        background: url('@{imgPath}teacherDetails/s_t_icon.png') -30px -149px no-repeat;
+        &.start-now{
+          background-position: 0 -149px;
+        }
+      }
+      .mp3-line{
+        width: 76px;
+        height: 100%;
+        padding-right: 5px;
+        border-right: 1px solid #f5f5f5;
+        margin-right: 5px;
+        position: relative;
+        float: left;
+        .mp3-line-top,.mp3-line-bottom{
+          position: absolute;
+          left: 0;
+          top:6px;
+          width: 76px;
+          height: 4px;
+          border-radius: 4px;
+          background-color: #e9e9e9;
+        }
+        .mp3-line-top{
+          background-color: #ffa300;
+          z-index: 2;
+          width: 50px;
+        }
+        .mp3-line-last{
+          position: absolute;
+          right: -10px;
+          top:-3px;
+          width: 10px;
+          height: 10px;
+          cursor: pointer;
+          z-index: 2;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') -166px -111px no-repeat;
+        }
+      }
+      .mp3-play{
+        float: left;
+        width: 28px;
+        margin-top:2px;
+      }
+    }
+    .video{
+      height: 18px;
+      line-height: 18px;
+      font-size: 16px;
+      text-align: center;
+      .video-icon{
+        width: 18px;
+        height: 18px;
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 7px;
+        background: url('@{imgPath}teacherDetails/s_t_icon.png') -62px -152px no-repeat;
+      }
+      a{
+        color: #ffa300;
+      }
+    }
+    .teacher-left-right{
+      margin-left: 170px;
+      .teacher-name-tit{
+        height: 38px;
+        line-height: 38px;
+        color: #333;
+        font-size: 14px;
+        margin-bottom: 18px;
+      }
+      .t-name{
+        font-size: 20px;
+        font-weight: bold;
+        margin-right: 8px;
+        position: relative;
+        padding-right: 38px;
+        
+        .flag{
+          position: absolute;
+          width: 20px;
+          height: 15px;
+          right: 10px;
+          top:7px;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') -93px -152px no-repeat;
+        }
+      }
+      .age{
+        padding-left: 10px;
+        &.age-line{
+          border-left:1px solid #666;
+        }
+      }
+      .teacher-star{
+        height: 20px;
+        margin-bottom: 20px;
+        padding-left: 0;
+        span{
+          height: 20px;
+          width: 20px;
+          background-position: 0 -180px;
+          &.half{
+            background-position: -24px -180px;
+          }
+          &.gray{
+            background-position: -47px -180px;
+          }
+        }
+      }
+      .teacher-icon-tag{
+        height: 24px;
+        span{
+          display: inline-block;
+          height: 22px;
+          padding:0 14px;
+          border:1px solid #ffa300;
+          text-align: center;
+          line-height: 22px;
+          border-radius: 24px;
+          color: #ffa300;
+          font-size: 12px;
+          margin-right: 10px;
+          vertical-align: top;
+        }
+      }
+    }
+    .s-t-top-right{
+      float: left;
+      width: 138px;
+      padding-left: 40px;
+      border-left: 1px dashed #e0e0e0;
+      height: 150px;
+      .share-flowers{
+        height: 40px;
+        margin-bottom: 16px;
+        li{
+          float: left;
+          width: 50%;
+          text-align: center;
+          line-height: 20px;
+          font-size: 12px;
+          color: #333;
+          a{
+            color: #333;
+          }
+          a:hover{
+            color: #333;
+            span{
+              color: #ffc600;
+            }
+          }
+          span{
+            color: #666;
+            line-height: 1;
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+      }
+      .go-search{
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border:1px solid #ffc600;
+        background-color: #ffc600;
+        color: #333;
+        font-size: 18px;
+        border-radius: 62px;
+        margin-bottom: 15px;
+        cursor: pointer;
+        span{
+          width: 26px;
+          height: 26px;
+          display: inline-block;
+          vertical-align: top;
+          margin-top:20px;
+          margin-right: 10px;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') 2px -113px no-repeat;
+        }
+        &:hover{
+          box-shadow: 0 0 20px #e0e0e0;
+        }
+      }
+      .cancel-collection{
+        background-color: #fff;
+        border:1px solid #e0e0e0;
+      }
+      .clear-search{
+        text-align: center;
+        height: 22px;
+        line-height: 22px;
+        font-size: 14px;
+        color: #999;
+        span{
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  // 评价
+  .s-t-list{
+    margin-bottom:20px;
+    background-color: #fff;
+    padding:20px 30px;
+    border-radius: 5px;
+    .t-d-label{
+      height: 26px;
+      line-height: 26px;
+      font-size: 0;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      span{
+        padding:7px 10px;
+        color: #333;
+        font-size: 12px;
+        line-height: 1;
+        background-color: #fff3dc;
+        border-radius: 5px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+    .student-evaluation{
+      padding-left: 19px;
+      .evaluation-text{
+        line-height: 32px;
+        font-size: 14px;
+        color: #333;
+        position: relative;
+        i{
+          width: 8px;
+          height: 8px;
+          position: absolute;
+          left:-18px;
+          top:12px;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') -157px 0 no-repeat;
+        }
+        span{
+          float: right;
+          color: #999;
+          font-size: 12px;
+          
+        }
+      }
+    }
+  }
+  // 小标题
+  .t-d-evaluate{
+    height: 38px;
+    line-height: 38px;
+    font-size: 16px;
+    color: #333;
+    span{
+      color: #999;
+    }
+    a{
+      color: #999;
+      font-size: 14px;
+      float: right;
+    }
+  }
+  // 自我介绍
+  .t-d-Introduce{
+    margin-bottom:20px;
+    background-color: #fff;
+    padding:20px 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    .english-word{
+      line-height: 24px;
+      color: #333;
+      margin-bottom: 9px;
+      margin-top: 13px;
+    }
+    .chinese-word{
+      color: #999;
+      line-height: 24px;
+      padding-bottom: 14px;
+    }
+    .comment{
+      border-top:1px solid #f5f5f5;
+      line-height: 24px;
+      color: #333;
+      padding-top: 13px;
+    }
+  }
+  // 预约课程
+  .t-d-appointment{
+    background-color: #fff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding:20px 0;
+    .t-d-evaluate{
+      padding:0 30px;
+    }
+  }
+  .appointment-cont{
+    margin-top: 20px;
+  }
+  .cont-top{
+    height: 59px;
+    background-color: #efefef;
+    &.cont-top-fixed{
+      position: fixed;
+      left: 0;
+      top:0;
+      z-index: 3;
+      width: 100%;
+    }
+    .cont-list-tit{
+      width: 1000px;
+      margin: 0 auto;
+      height: 59px;
+      background-color: #fcfcfc;
+      border-top:1px solid #ececec;
+      border-bottom:1px solid #ececec;
+    }
+    li{
+      float: left;
+      width: 127px;
+      border-right:1px solid #ececec;
+      text-align: center;
+      height: 50px;
+      font-size: 14px;
+      color: #333;
+      padding-top: 9px;
+      span{
+        font-size: 12px;
+      }
+      &.first,&.last{
+        width: 51px;
+        span{
+          cursor: pointer;
+          width: 10px;
+          height: 22px;
+          margin-top: 10px;
+          vertical-align: top;
+          display: inline-block;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') -127px -113px no-repeat;
+        }
+      }
+      &.last{
+        border-right: none;
+        width: 52px;
+        span{
+          background-position: -43px -113px;
+        }
+      }
+      &.lastgo{
+        span{
+          background-position: -70px -113px;
+        }
+      }
+      &.firstgo{
+        span{
+          background-position: -99px -113px;
+        }
+      }
+    }
+  }
+  .cont-bottom{
+    .cont-list{
+      height: 52px;
+    }
+    li{
+      border-right: 1px solid #f5f5f5;
+      border-bottom: 1px solid #f5f5f5;
+      padding:6px;
+      width: 115px;
+      height: 39px;
+      float: left;
+      text-align: center;
+      line-height: 39px;
+      color: #e0e0e0;
+      font-size: 14px;
+      position: relative;
+      .class-time{
+        height: 37px;
+        width: 113px;
+        border:1px solid #ffc600;
+        border-radius: 5px;
+        color: #333;
+        background-color: #fff9e5;
+        cursor: pointer;
+        i{
+          width: 23px;
+          height: 100%;
+          float: right;
+          display: none;
+          background: url('@{imgPath}teacherDetails/s_t_icon.png') -129px -73px no-repeat;
+          background-color: #fff9e5;
+          border-radius: 0 5px 5px 0;
+        }
+      }
+      .tips-details-text{
+        position: absolute;
+        right: -250px;
+        top:6px;
+        width: 242px;
+        height: 39px;
+        line-height: 39px;
+        text-align: left;
+        text-indent: 20px;
+        background: url('@{imgPath}teacherDetails/s_t_icon.png') 0 -235px no-repeat;
+        z-index: 1;
+        color: #333;
+        font-size: 14px;
+        display: none;
+        .tips-details-close{
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          vertical-align: top;
+          margin-top: 10px;
+          margin-left: 4px;
+          cursor: pointer;
+        }
+      }
+      &.classGo{
+        .class-time{
+          background-color: #ffc600;
+          i{
+            display: block;
+          }
+        }
+      }
+      &.first,&.last{
+        width: 39px;
+      }
+      &:hover{
+        .class-time{
+          background-color: #ffc600;
+        }
+      }
+    }
+  }
+  
+  .item-top-cont{
+    background-color: #fff;
+    width: 215px;
+    padding:30px 10px;
+    border-radius: 5px 5px 0 0;
+    text-align: center;
+    .teacher-img{
+      margin-bottom: 10px;
+      img{
+        border-radius: 50%;
+        border:1px solid #e5e5e5;
+      }
+    }
+    .teacher-name{
+      line-height: 36px;
+      color: #333;
+      font-size: 16px;
+    }
+    .teacher-age{
+      height: 33px;
+      line-height: 1;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .teacher-star{
+    height: 28px;
+    padding-left: 24px;
+    span{
+      float: left;
+      width: 28px;
+      height: 28px;
+      margin-right: 7px;
+      background:url('@{imgPath}teacherDetails/s_t_icon.png') 0 0 no-repeat;
+      &.half{
+        background-position: -30px 0;
+      }
+      &.gray{
+        background-position: -61px 0;
+      }
+    }
+  }
+  .s-t-recommend{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 25px 30px;
+    margin-bottom: 58px;
+  }
+  .s-t-recommend-tit{
+    height: 24px;
+    line-height: 24px;
+    margin-bottom: 11px;
+    .recommend-left{
+      float: left;
+      color: #333;
+      font-size: 16px;
+      span{
+        background: url('@{imgPath}teacherDetails/s_t_icon.png') -47px -46px no-repeat;
+        width: 18px;
+        height: 20px;
+        float: left;
+        margin-right: 10px;
+        margin-top: 2px;
+      }
+    }
+    .recommend-right{
+      float: right;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .recommend-list{
+    height: 167px;
+    margin-right: -20px;
+    li{
+      width: 172px;
+      float: left;
+      margin-right: 20px;
+      .item-top-cont{
+        width: 172px;
+        padding:14px 0;
+        .teacher-img{
+          margin-bottom: 5px;
+          img{
+            width: 80px;
+            height: 80px;
+            display: inline-block;
+          }
+        }
+      }
+      .teacher-star{
+        height: 16px;
+        overflow: hidden;
+        padding-left: 34px;
+        span{
+          width: 16px;
+          height: 16px;
+          background-position: 0 -83px;
+          &.half{
+            background-position: -17px -83px;
+          }
+          &.gray{
+            background-position: -34px -83px;
+          }
+        }
+      }
+      &:hover{
+        box-shadow: 0px 0px 40px #efefef;
+      }
+    }
+    
+  }
+  .hide{
+    display: none;
+  }
+}
+.instant-booking-bottom{
+  height: 120px;
+}
+.instant-booking{
+  height: 120px;
+  background-color:rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: relative;
+  &.instant-booking-fixed{
+    position: fixed;
+    left: 0;
+    bottom:0;
+    z-index: 3;
+  }
+  a{
+    width: 187px;
+    height: 50px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -94px;
+    margin-top: -25px;
+    background-color: #ffc600;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+}
+.evaluate-content{
+  padding-bottom: 10px;
+  .evaluate-content-tit{
+    height: 49px;
+    line-height: 49px;
+    font-size: 14px;
+    color: #333;
+    background-color: #fcfcfc;
+    border-top:1px solid #f5f5f5;
+    border-bottom:1px solid #f5f5f5;
+    margin-left: -30px;
+    margin-right: -30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    i{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      vertical-align: top;
+      margin-top: 16px;
+      margin-right: 8px;
+      background: url('@{imgPath}teacherDetails/s_t_icon.png') -203px 0 no-repeat;
+      &.active{
+        background-position: -177px 0;
+      }
+    }
+  }
+  .evaluate-content-left{
+    float: left;
+    span{
+      margin-right: 20px;
+    }
+  }
+  .evaluate-content-right{
+    float: right;
+    i{
+      background-position: -54px -83px;
+      &.active{
+        background-position: -76px -83px;
+      }
+    }
+  }
+  .evaluate-content-list{
+    li{
+      padding:20px 0;
+      border-bottom: 1px solid #f5f5f5;
+      &.last{
+        border: none;
+      }
+    }
+  }
+  .s-t-page{
+    height: 34px;
+    font-size: 0;
+    text-align: center;
+    padding-top: 10px;
+    a{
+      font-size: 14px;
+      color: #999;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      display: inline-block;
+      text-align: center;
+      background-color: #fff;
+      border:1px solid #e0e0e0;
+      border-radius: 3px;
+      vertical-align: top;
+      margin-right:10px;
+      &.active{
+        background-color: #ffc600;
+        color: #333;
+        border-color:#ffc600;
+      }
+      &.next-page,&.pre-page{
+        background: url('@{imgPath}teacherDetails/s_t_icon.png') -92px -36px no-repeat #fff;
+      }
+      &.pre-page{
+        background-position: -158px -36px;
+      }
+      &:hover{
+        background-color: #ffc600;
+        color: #333;
+        border-color:#ffc600;
+      }
+      &.prohibit{
+        background-color: #f7f7f7;
+        &:hover{
+          border-color: #e0e0e0;
+        }
+      }
+    }
+  }
+}
+.comon-tip{
+  position: fixed;
+  left: 0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  display: none;
+  .teacher-bg-color{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+  }
+  .close-t-tips{
+    position: absolute;
+    right: 11px;
+    top:13px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    background: url('@{imgPath}teacherDetails/s_t_icon.png') -162px -80px no-repeat;
+  }
+  .success-c{
+    line-height: 24px;
+    padding:0 20px;
+    font-size: 14px;
+  }
+  .t-tips-sure{
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    span{
+      height: 28px;
+      line-height: 28px;
+      text-align: center;
+      border-radius: 3px;
+      width: 80px;
+      border:1px solid #ffa300;
+      color: #ffa300;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+    }
+  }
+  .share-teacher{
+    margin-top: 18px;
+    height: 26px;
+    padding: 0 20px;
+    line-height: 26px;
+    a{
+      display: inline-block;
+      width: 26px;
+      height: 26px;
+      vertical-align: top;
+      background: url('@{imgPath}teacherDetails/s_t_icon.png') 4px -204px no-repeat;
+    }
+    .share-t-qq{
+      background-position: -27px -204px;
+    }
+    .share-t-sina{
+      background-position: -57px -204px;
+    }
+    .share-t-qzone{
+      background-position: -89px -204px;
+    }
+    
+  }
+}
+// 评价提示
+.collection-tips,.video-tips{
+  .teacer-tips{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width: 360px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-left: -180px;
+    margin-top: -95px;
+    color: #333;
+    padding-bottom: 13px;
+    .t-tips-tit{
+      height: 46px;
+      line-height: 46px;
+      padding:0 20px;
+      background-color: #ffc600;
+      border-radius: 5px 5px 0 0;
+      font-size: 16px;
+      margin-bottom: 14px;
+    }
+  }
+}
+// 欧美视频弹窗
+.video-tips{
+  .teacer-tips{
+    padding-bottom: 0;
+    width: 700px;
+    margin-left: -350px;
+    margin-top: -225px;
+    border:2px solid #ffc600;
+    .t-tips-tit{
+      margin-bottom: 0;
+    }
+    .video-cont{
+      height: 450px;
+    }
+  }
+}
+// 献花提示
+.flowers-cont{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  width: 280px;
+  background-color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  color: #333;
+  font-size: 16px;
+  padding:40px 0 30px;
+  margin-left: -140px;
+  margin-top:-95px;
+  .flowers-text{
+    line-height: 35px;
+    span{
+      font-weight: bold;
+      color: #ffa300;
+    }
+  }
+  .flowers-btn{
+    height: 30px;
+    margin-top: 20px;
+    line-height: 30px;
+    span{
+      display: inline-block;
+      height: 28px;
+      width: 87px;
+      line-height: 28px;
+      text-align: center;
+      color: #333;
+      border:1px solid #e0e0e0;
+      border-radius: 30px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .f-sure{
+      background-color: #ffc600;
+      border-color: #ffc600;
+      margin-right: 10px;
+    }
+  }
+  .close-t-tips{
+    background-position: -194px -80px;
+  }
+}
+
+// 分享弹窗
+.share-tips{
+  .flowers-cont{
+    text-align: left;
+  }
+}

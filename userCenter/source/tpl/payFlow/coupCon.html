@@ -1,0 +1,9 @@
+<% _.each(data,function(item){ %>
+    
+    <li class="<%= item.is_order_use?'disable':'normal'%>" data-money="<%= item.money %>" data-cardid = "<%=item.id%>">
+        <dl>
+            <dt>¥<%= item.money %></dt>
+            <dd>有效期至 <%= item.valid_end%></dd>
+        </dl>
+    </li>
+    <% }); %>

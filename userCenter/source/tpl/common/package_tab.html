@@ -1,0 +1,10 @@
+<ul class="tab f-cb" id="tabId">
+<% _.each(data,function(item){ %>
+    <% if(item.is_current == 1){ %>
+        <li class="current"><a href="<%= item.url %>"><%= item.name %></a></li>
+    <% }else{ %>
+        <li><a href="<%= item.url %>"><%= item.name %></a></li>
+    <% } %>
+<% }) %>
+</ul>
+

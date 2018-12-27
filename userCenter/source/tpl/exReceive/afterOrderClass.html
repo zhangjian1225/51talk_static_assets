@@ -1,0 +1,72 @@
+<div class="results">
+    <h3>
+        我预约的评测课
+        <a href="http://www.51talk.com/user/appoint" target="_blank" class="more">更多></a>
+    </h3>
+    <div class="lists">
+        <h4>
+            <i></i>
+            <%= data.show_time_for_stu %>
+                <a href="javascript:;" class="evlBtn">1对1外教评测课</a>
+        </h4>
+        <dl>
+            <% if(data.preview_video == '') {%>
+                <dt><img src="../../images/exReceive/r_after_img.png" alt=""></dt>
+                <% } else{ %>
+                    <dt>
+          <div class="viewDt">
+            <img src="<%=imagessrc2%>exReceive/viewImg.png" alt="" class="viewImg">
+            <i class="view-btn" data-video="<%= data.preview_video %>" onclick = "__sdonclick('exclassvideo');"></i>
+            <span>课前预习视频</span>
+          </div>
+        </dt>
+                    <% } %>
+                        <dd class="ts">
+                            <%= data.course_name %>
+                        </dd>
+                        <dd>
+                            <%= data.course_name_en_us %>
+                        </dd>
+                        <dd class="tt">
+                            <% if(data.teacher_url == '') {%>
+                                <img src="<%= data.tea_pic %>" alt="">
+                                <% } else{ %>
+                                    <a href="<%= data.teacher_url %>" target="_blank"><img src="<%= data.tea_pic %>" alt=""></a>
+                                    <% } %>
+                                        <%= data.tea_name %>
+                        </dd>
+        </dl>
+    </div>
+    <div class="basicList">
+        <ul class="preList">
+            <li><a href="<%= data.url_preview %>" onclick="__sdonclick('preview');" class="preview" target="_blank"><i></i>课程预习</a></li>
+            <li><a href="<%= data.book_url %>" onclick="__sdonclick('downloadbook');" class="download"><i></i>下载教材</a></li>
+            <% if(data.updateble == true) {%>
+                <li>
+                    <a href="http://www.51talk.com/reserve/upcourse/<%= data.id %>" onclick="__sdonclick('changebook');" class="modify" target="_blank">
+                        <% } else{ %>
+                            <li class="notCheck">
+                                <a href="javascript:;" class="modify">
+                                    <% } %>
+                                        <i></i>修改教材
+                                        <div class="modiLayer">
+                                            <div class="layer">
+                                                <i></i>
+                                                <span>课前一小时内无法修改教材</span>
+                                            </div>
+                                        </div>
+                                </a>
+                            </li>
+                            <% if(data.updateble == true) {%>
+                                <li>
+                                    <a href="http://www.51talk.com/reserve/cancel/<%= data.id %>" onclick="__sdonclick('cancel');" class="cancel" target="_blank">
+                                        <% } else{ %>
+                                            <li class="notCheck">
+                                                <a href="javascript:;" class="cancel">
+                                                    <% } %>
+                                                        <i></i>取消课程</a>
+                                            </li>
+                                            <!-- <li class="notice hide"><i></i>课前半小时不可修改</li> -->
+        </ul>
+    </div>
+</div>

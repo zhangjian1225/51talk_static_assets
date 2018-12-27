@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>体验用户</title>
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>exReceive/index_after.css">
+</head>
+<body>
+  <% include ../common/header.ejs %>
+  <div class="contentWidth">
+    <% include ../common/banner.ejs %>
+    <div class="exContent">
+      <% include ../common/sidebar.ejs %>
+      <div class="content">
+        <% include ./basic.ejs %>
+        <div class="results">
+          <h3>
+            我预约的评测课
+            <a href="javascript:;" class="more">更多></a>
+          </h3>
+          <div class="lists leveLists">
+            <h4>
+              <i></i>
+              2017/12/30<span>14:30 - 14:55</span>
+              <a href="javascript:;" class="evlBtn">1对1外教评测课</a>
+            </h4>
+            <dl>
+              <dt class="hide"><img src="<%=imagessrc2%>exReceive/r_after_img.png" alt=""></dt>
+              <dt>
+                <div class="viewDt">
+                  <img src="<%=imagessrc2%>exReceive/viewImg.png" alt="" class="viewImg">
+                  <i class="view-btn" data-video=""></i>
+                  <!-- <span>课前预习视频</span> -->
+                </div>
+              </dt>
+              <dd class="ts">教你稳过名校面试</dd>
+              <dd>Dealing with the school interview</dd>
+              <dd class="tt"><img src="<%=imagessrc2%>exReceive/r_after_ipad.jpg" alt="">51talk teacher</dd>
+            </dl>
+          </div>
+          <div class="basicList">
+            <ul class="preList">
+              <li class="check"><a href="javascript:;" class="preview"><i></i>课程预习</a></li>
+              <li><a href="javascript:;" class="download"><i></i>下载教程</a></li>
+              <li class="notCheck">
+                <a href="javascript:;" class="modify">
+                  <i></i>修改教程
+                  <div class="modiLayer">
+                    <div class="layer">
+                      <i></i>
+                      <span>课前一小时内无法修改教材</span>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="notCheck"><a href="javascript:;" class="cancel"><i></i>取消课程</a></li>
+              <!-- <li class="notice hide"><i></i>课前半小时不可修改</li> -->
+            </ul>
+          </div>
+        </div>
+        <!-- 课前准备 -->
+        <div class="pre-info-main">
+          <h3>课前准备</h3>
+          <div class="info-video">
+            <ul>
+              <li>
+                <img src="<%=imagessrc2%>exReceive/r_video_l.jpg" alt="">
+                <i class="video-btn"></i>
+                <span class="title">了解51Talk的课程与服务</span>
+              </li>
+              <li>
+                <img src="<%=imagessrc2%>exReceive/r_video_r.jpg" alt="">
+                <i class="video-btn"></i>
+                <span class="title">课前必看：如何上好一节评测课</span>
+              </li>
+            </ul>
+          </div>
+          <h3>请下载上课软件，推荐使用青少课堂iPad客户端</h3>
+          <div class="info-software">
+            <ul>
+              <li><img src="<%=imagessrc2%>exReceive/r_after_ipad.jpg" alt=""></li>
+              <li>
+                <dl>
+                  <dt>青少课堂 iPad端<span>推荐</span></dt>
+                  <dd class="indent">使用iPad在App Store搜索青少课堂下载</dd>
+                  <dd><i></i>游戏化界面，学习更加生动有趣</dd>
+                  <dd><i></i>移动课堂 随时随地互动学习</dd>
+                </dl>
+              </li>
+              <li>
+                <img src="<%=imagessrc2%>exReceive/r_ipad_code.jpg" alt="">
+                <span>扫码下载</span>
+              </li>
+            </ul>
+            <ul>
+              <li><img src="<%=imagessrc2%>exReceive/r_after_logo.jpg" alt=""></li>
+              <li>
+                <dl>
+                  <dt>AC在线教室 电脑客户端</dt>
+                  <dd><i></i>高清晰度视频通话，零距离连线外教</dd>
+                  <dd><i></i>内嵌教材，无需下载，使用方便</dd>
+                  <dd><i></i>中英双语即时翻译，与外教对话无障碍</dd>
+                </dl>
+              </li>
+              <li>
+                <img src="<%=imagessrc2%>exReceive/r_logo_load.jpg" alt="">
+                <span>下载软件</span>
+              </li>
+            </ul>
+          </div>
+          <div class="info-list">
+            <p>常见问题：</p>
+            <ul>
+              <li>（1）上课前需要准备什么？</li>
+              <li><span>请在课前熟悉本节课教材，根据提示做好课前预习，提前进入AC在线教室等待外教进入即可。</span></li>
+              <li>（2）上课过程中出现问题怎么办？</li>
+              <li><span>您可以拨打客服热线：4000-515151 或者联系您的课程顾问。</span></li>
+              <li>（3）上完课后，何时能看到我的评测结果？</li>
+              <li><span>外教会在课后第一时间为您生成专属的评测报告，届时，您直接登录51Talk会员中心即可查看。另外，我们也有专属的课程顾问，会在您上完课后24小时左右与您联系。</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <% include ../common/sidebarRt.ejs %>
+    </div>
+  </div>
+  <% include ../common/bottom.ejs %>
+</body>
+<!-- <script src="<%= jsSource2%>" id="seajsnode"></script> -->
+</html>

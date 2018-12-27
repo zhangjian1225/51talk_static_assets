@@ -1,0 +1,268 @@
+@import "../common/banner.less";
+@import "../common/sidebar.less";
+@import "../common/sidebarRt.less";
+@import "./basic.less";
+@imgPath: '../../images/';
+.hide{
+  display:none;
+}
+.alertSys .hd{
+  img{
+    float: right;
+    margin:10px 10px 0 0;
+  }
+}
+.results{
+  .lists{
+    dl{
+      dt{
+        width:136px;
+        height:133px;
+        background:url("@{imgPath}exReceive/r_level.png") 0 0 no-repeat;
+        text-align:center;
+        right: 30px;
+        span{
+          display:inline-block;
+          margin-top:60px;
+          i{
+            display:inline-block;
+            font-size:18px;
+            color:#ffa300;
+            margin-top:10px;
+          }
+        }
+      }
+      .absent{
+        background:url("@{imgPath}exReceive/r_absent_l.png") 0 0 no-repeat;
+      }
+      .stuAbsent{
+        background:url("@{imgPath}exReceive/r_absent.png") 0 0 no-repeat;  
+      }
+    }
+  }
+  .leveLists{
+    dl dt{
+      right:0;
+      background: none;
+    }  
+  }
+  .basicList{
+    .preList{
+      li{
+        .see i{
+          background-position: -51px -23px;  
+        }
+        .review i{
+          background-position: -1px -23px;  
+        }
+        .classTest i{
+          background-position: -27px -23px;  
+        }
+        .playback i{
+          background-position: 0px -45px;  
+        }
+      }
+      .notCheck{
+        .playback{ 
+          i{
+            background-position: -28px -45px;  
+          }
+        }
+        .modiLayer{
+          width:270px;
+          margin-left:-135px;
+          text-align:left;
+          .layer{
+            padding:5px 20px;
+          }
+          i{
+            background-position: -55px -48px;  
+          }
+        } 
+        &:hover{
+          .modiLayer{
+            display:block;
+          }  
+        }
+      }
+      .courseLi{
+        width:185px;
+        font-size:16px;
+      }
+      .courseTel{
+        border:none;
+        line-height:25px;
+        color:#ff5c41;
+        font-size:14px;
+        width:100%;
+      }
+      .evalCls{
+        margin-left:70px;
+      }
+      .notClass{
+        .classTest{
+          color: #bebebe;
+          cursor: default;
+          i{
+            background-position: -129px -23px;     
+          }
+        }
+        &:hover{
+          border:1px #e0e0e0 solid;
+          background: none;
+        }
+      }
+    }
+  }
+}
+.moreServer{
+  background:#fff;
+  border-radius:5px;
+  margin-top:20px;
+  padding:0 30px 30px 30px;
+  h3{
+    height:75px;
+    line-height:75px;
+    font-size:16px;
+  }
+  .info-stu{
+    overflow:hidden;
+    .stu-read{
+      float:left;
+      width:200px;
+      height:240px;
+      background:url("@{imgPath}exReceive/r_details.jpg") 0 0 no-repeat;
+      cursor: pointer;
+      a{
+        display:block;
+        height:50px;
+        line-height:50px;
+        margin-top:190px;
+        text-align:center;
+        color:#fff;
+      }
+    }
+    .cls-video{
+      float:right;
+      position:relative;
+      cursor: pointer;
+      img{
+        width:350px;
+        height:240px;
+        border-radius:5px;  
+      }
+      .video-btn,.title{
+        position:absolute;
+      }
+      .video-btn{
+        left:50%;
+        top:90px;
+        margin-left:-20px;
+        width:40px;
+        height:40px;
+        cursor:pointer;
+        background:url("@{imgPath}exReceive/r_video_btn.png") 0 0 no-repeat;
+      }
+      .title{
+        width:100%;
+        height:50px;
+        line-height:50px;
+        bottom:0;
+        background-color:rgba(0,0,0,0.3);
+        text-align:center;
+        color:#fff;
+      }
+    }
+  }
+  .package{
+    margin-top:20px;
+    width:530px;
+    height:121px;
+    background:url("@{imgPath}exReceive/r_course.jpg") 0 0 no-repeat;  
+    color:#fff;
+    padding-left:40px;
+    line-height:1;
+    span{
+      display:block;
+      font-size:18px;
+      padding:30px 0;
+    }
+    a{color:#fff;}
+  }
+}
+.deLayer{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 20;
+  .view{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1030px;
+    height: 620px;
+    margin:-310px 0 0 -515px;
+    .ltBtn ,.rtBtn{
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 44px;
+      background:url("@{imgPath}exReceive/new_btn.png") 0 0 no-repeat;
+      margin-top:-22px;
+      cursor: pointer;
+    }
+    .rtBtn{
+      right: 0;
+      background-position: -20px 0;
+    }
+    .content{
+      width: 850px;
+      height: 620px;
+      background: #fff;
+      border-radius: 5px;
+      margin-left: 86px;
+      .delete{
+        float: right;
+        cursor:pointer;
+        margin:20px 20px 0 0;
+      }
+    }
+    .cont{
+      width: 778px;
+      height: 600px;
+      overflow: hidden;
+      margin-left: 36px;
+      .lists{
+        width: 6224px;
+        height: 520px;
+        text-align: center;
+        margin-top: 50px;
+        overflow: hidden;
+        li{
+          float: left;
+        }
+      }
+      .switch{
+        overflow: hidden;
+        margin-left: 42%;
+        li{
+          float: left;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #eaeaea;
+          margin:0 5px;
+          cursor: pointer;
+        }
+        .crt{
+          background: #ffc600;
+        }
+      }
+    }
+  }
+}
+#youthBtn .view .cont .lists{
+  width: 7780px;
+}

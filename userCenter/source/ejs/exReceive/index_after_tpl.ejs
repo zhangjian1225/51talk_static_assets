@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>领取体验课后</title>
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>exReceive/index_after.css">
+  <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+  <script type="text/javascript">
+    window.static_url="../../";
+  </script>
+</head>
+<body data-init="exReceive/indexAfter" id="container">
+  <div id="indexAfter">
+    loading....
+  </div>
+  <!-- 1成人 or 0青少 -->
+  <input type="hidden" id="userId" value="0">
+</body>
+<script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+<script src="<%= jsSource2%>" id="seajsnode"></script>
+</html>

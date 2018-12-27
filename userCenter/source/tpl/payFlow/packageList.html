@@ -1,0 +1,75 @@
+<dl class="wrap-list">
+        <input type="hidden" name="is_cash_down" value="<%= is_cash_down%>">
+        <input type="hidden" name="sign" value="<%= sign%>">
+        <input type="hidden" name="gateway" value="<%=gateway%>" >
+        <input type="hidden" name="point_id" value="<%=point_id%>">
+        <%for(var item in point){%>
+        <dd class="item">
+                <ul class="f-cb">
+                        <li class="t1">
+                                <dl class="m-des">
+                                   <dt><%=point[item].point_type_name%></dt>
+                                </dl>
+                        </li>
+                        <li class="t2">
+                                <dl class="m-des">
+                                        <%if(point[item].point_type=="microphone"){%>
+                                                <dt><%=point[item].name%></dt>
+                                                <dd>数量(<%= point[item].point_value %>)</dd>
+                                        <%}else if(point[item].point_type=="book"){%>
+                                                <dt><%=point[item].name%></dt>
+                                                <dd>数量(<%= point[item].point_value %>)</dd>
+                                        <%}else {%>
+                                                <%if((point[item].item_list.point && point[item].item_list.point.num) && (point[item].item_list.class_time)){%>
+                                                        <dt><%= point[item].point_type=='point_unit'?point[item].unit_num+'单元':''%>  &nbsp;<%if( point[item].point_type=='point_unit'){%>
+                                                                (次卡<%= point[item].item_list.point.num%>次)<%}else{%>
+                                                                        次卡<%= point[item].item_list.point.num%>次<%}%> + 优选公开课<%= point[item].item_list.class_time.num%>课时</dt>
+                                                <%}else if(point[item].item_list.point && point[item].item_list.point.num){%>
+                                                        <dt><%= point[item].point_type=='point_unit'?point[item].unit_num+'单元':''%>  &nbsp;<%if( point[item].point_type=='point_unit'){%>
+                                                                (次卡<%= point[item].item_list.point.num%>次)<%}else{%>
+                                                                        次卡<%= point[item].item_list.point.num%>次<%}%></dt>
+                                                <%}else if(point[item].item_list.class_time && point[item].item_list.class_time.num){%>
+                                                        <dt>优选公开课<%= point[item].item_list.class_time.num%>课时</dt>
+                                                <%}%>       
+                                                <% if(point[item] && !(point[item].conf_expire_status === 0)) { %>
+                                                    <dd>有效期（<%= point[item].show_expire_days%>天）</dd>
+                                                <% } %>  
+                                        <%}%>
+                                </dl>
+                        </li>
+                        <li class="t3">
+                                <dl class="m-des <%=point[item].point_type=='point_package'?'discount':''%>">
+                                        <%if(point[item].give_point){%>
+                                            <dt>赠品：次卡<%= point[item].give_point%>次</dt> 
+                                        <%}%>
+                                        <%if(point[item].straight_down){%>
+                                            <dt>优惠：直降<%= point[item].straight_down %>元</dt> 
+                                        <%}%>
+                                        <%if(!point[item].give_point && !point[item].straight_down){%>
+                                            <dt>-</dt>
+                                        <%}%>
+                                </dl>
+                        </li>
+                        <li class="t4">
+                                <dl class="m-des">
+                                        <%if(point[item].straight_down){%>
+                                                <dt class="original">
+                                                         ¥ <%= point[item].price%>
+                                                </dt>
+                                                <dt>
+                                                        - ¥ <%= point[item].straight_down.toFixed(2)%>        
+                                                </dt>
+                                                <dt class="money">
+                                                        ¥ <%= point[item].price - point[item].straight_down %>
+                                                </dt>
+                                        <%} else{%>
+                                                <dt class="money">
+                                                        ¥ <%= point[item].price%>
+                                                </dt>
+                                        <%}%>
+                                </dl>
+                        </li>
+                    </ul>
+        </dd>
+        <%}%>
+</dl>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>选择上课方式</title>
+    <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+    <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>exReceive/index_method.css">
+    <script type="text/javascript">
+        window.static_url = "../../";
+        window.completion_url = "../../"; //完成预约链接
+    </script>
+</head>
+
+<body data-init="exReceive/indexMethodTrailSuccess" id="container">
+    <div id="indexMethod">
+        loading....
+    </div>
+    <input type="hidden" id="date" value="123">
+    <input type="hidden" id="timeId">
+    <input type="hidden" id="mobile">
+    <input type="hidden" id="authCode">
+    <input type="hidden" id="mobileCode">
+    <!-- 成人 or 青少 -->
+    <input type="hidden" id="userId" value="51TalkAC">
+</body>
+<script src="<%= jsSource2%>" id="seajsnode"></script>
+
+</html>

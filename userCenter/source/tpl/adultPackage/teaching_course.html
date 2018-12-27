@@ -1,0 +1,54 @@
+<div class="img-box">
+    <img src="../../images/adultPackage/a_tea.jpg" /></div>
+<div class="info-box">
+    <h2>无忧英语成人课程配套教材</h2>
+    <p class="des">【包邮】51Talk重磅投入，汇聚全球百余位语言教育专家，6年倾力研发与实践，适合国人每阶段的英语学习！</p>
+    <div class="price-box" id="priceBox">
+        <div class="p-text f-cb">
+            <span class="text text-price">价格</span>
+            <div class="text-v p-value">¥<span id="priceId"></span></div>
+        </div>
+    </div>
+    <div class="course-box">
+        <ul class="course-list f-cb" id="courseInfo">
+            <% for(var i = 0; i < data.list.length; i++) { %>
+                <% if(data.list[i].is_recommend == 1 ) { %>
+                    <% if(data.list[i].status == 0) {%>
+                        <li onclick="__sdonclick('<%= data.list[i].name %>');" data-id="<%= data.list[i].id %>" data-price="<%= data.list[i].price %>" class="j-icon n-chose">
+                            <span></span>
+                            <% } else { %>
+                                <li onclick="__sdonclick('<%= data.list[i].name %>');" data-id="<%= data.list[i].id %>" data-price="<%= data.list[i].price %>" class="j-icon">
+                                    <span></span>
+                                    <% } %>
+                                        <% } else if(data.list[i].status == 0){%>
+                                            <li onclick="__sdonclick('<%= data.list[i].name %>');" data-id="<%= data.list[i].id %>" data-price="<%= data.list[i].price %>" class="n-chose">
+                                                <% } else {%>
+                                                    <li onclick="__sdonclick('<%= data.list[i].name %>');" data-id="<%= data.list[i].id %>" data-price="<%= data.list[i].price %>">
+                                                        <% } %>
+                                                            <div class="li-info">
+                                                                <p>
+                                                                    <%= data.list[i].name %>
+                                                                </p>
+                                                            </div>
+                                                            <i></i>
+                                                    </li>
+                                                    <% } %>
+        </ul>
+    </div>
+    <div class="prompt-text">
+        <span>推荐提示</span>
+        <% if(data.level == '0') { %>
+            <span class="levle-text">您当前还没有英语等级，建议您预约体验课程后购买适合您的教材</span>
+            <% } else {%>
+                <span class="levle-text">您当前英语等级为 level<%= data.level %>，建议选择 CE Level <%= data.level %> 的教材</span>
+                <% } %>
+
+    </div>
+    <div class="buy-btn f-cb">
+        <a onclick="__sdonclick('buynow');" id="purchaseImmediately" class="buy-b" href="javascript:;">立即购买</a>
+        <a onclick="__sdonclick('cartadd');" class="shop-b jsCart" id="cartBtn" href="javascript:;">加入购物车</a>
+        <form id="buyBtnFrom" method='post' action="//sale.51talk.com/orderInfo">
+            <input id="formCard" type="hidden" name="cart" value="" />
+        </form>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="price-box">
+    <div class="p-text f-cb">
+        <span class="text text-price oldPriceTitle">原价：</span>
+        <div class="text-v p-value oldPrice">¥<%= data.info.price %></div>
+    </div>
+    <% if( data.pay.is_cash_down == 1 || data.pay.is_straight_down == 1 || data.pay.is_give_point == 1 || data.pay.user_learn_money.is_learn_money == 1){ %>
+    <div class="p-text f-cb">
+        <span class="text v-title">优惠：</span>
+        <div class="text-v total-price cutPrice">
+            <% if(data.pay.is_straight_down == 1){ %>
+            <div>
+                <span class="z-icon"> </span> 
+                直降<%= data.pay.straight_down %>元
+            </div>
+            <% } %>
+            <% if(data.pay.is_cash_down == 1){ %>
+            <div>
+                <span class="z-icon reduce"> </span> 
+                满<%= data.pay.cash_down_man %>减<%= data.pay.cash_down_jian %>
+            </div>
+            <% } %>
+            <% if(data.pay.user_learn_money.is_learn_money == 1){ %>
+                <div>
+                    <span class="z-icon reduce"> </span>
+                    恭喜参加“10月学霸召集令”活动，获得<%= data.pay.user_learn_money.learn_money_desc %>奖学金
+                 </div>
+            <% } %>
+            <% if(data.pay.is_give_point == 1){ %>
+            <div>
+                <span class="z-icon freeGive"> </span>
+                 <%= data.pay.give_point %>节课程（次卡）
+             </div>
+            <% } %>
+        </div>
+    </div>
+    <% } %>
+     <div class="p-text f-cb">
+        <span class="text v-title z-real"> 实付：</span>
+        <div class="realPay">¥ <%= data.pay.pay_price %> <span class="z-per">（￥<%= data.info.avg_price %> /节）</span></div>
+    </div>
+</div>
+

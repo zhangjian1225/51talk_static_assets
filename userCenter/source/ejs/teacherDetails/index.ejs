@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>teacherDetails/index.css">
+  <script src="http://api.html5media.info/1.1.6/html5media.min.js"></script>
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <link href="http://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
+</head>
+<body id="container" data-init="teacherDetails/index">
+<% include ../common/header.ejs %>
+<div class="teacher-details">
+  <!-- 老师信息及收藏块 -->
+  <div class="s-t-top">
+    <!-- s-t-top-details增加class 1. western-teacher欧美外教搜索部分显示 2.collection-teacher收藏外教搜索部分显示 -->
+    <div class="s-t-top-details f-cb">
+      <div class="s-t-top-left">
+        <div class="teacher-left-left">
+          <div class="teacher-img">
+            <img src="<%=imagessrc2%>teacherDetails/userImage.jpg" alt="" class="user-img">
+            <img src="<%=imagessrc2%>teacherDetails/user_shadow.png" alt="" class="user-shadow-img">
+          </div>
+          <div class="mp3">
+            <span class="mp3-start"></span>
+            <div class="mp3-line">
+              <div class="mp3-line-top" style="width:0;"><span class="mp3-line-last"></span></div>
+              <div class="mp3-line-bottom"></div>
+            </div>
+            <img src="<%=imagessrc2%>teacherDetails/play_mp3.png" alt="" class="mp3-play">
+            <audio id='audio-cont' src="http://www.51talk.com/upload/audio/2016/09/26/20160926163529.mp3">
+            </audio>
+          </div>
+          <div class="video hide"><a href="javascript:;"><span class="video-icon"></span>查看视频</a></div>
+        </div>
+        <div class="teacher-left-right">
+          <h3 class="teacher-name-tit"><span class="t-name">Chris Marc<i class="flag"></i></span><span class="age age-line">33岁</span><span class="age">2年教龄</span>
+          </h3>
+          <div class="teacher-star"><span></span><span></span><span></span><span class="half"></span><span class="gray"></span></div>
+          <div class="teacher-icon-tag"><span>小学老师</span><span>TESOL认证</span></div>
+        </div>
+      </div>
+      <div class="s-t-top-right">
+        <ul class="share-flowers">
+          <li><a href="javascript:;" data-flowsers="2" data-tid="t691386619"><span>602</span><br>献花</a></li>
+          <li><a href="javascript:;" sharecontent="51Talk外教和服务挺不错，我向我的好友推荐了51Talk!你也来试试吧！" sharelink="http://www.51talk.com/page/teashowshare?tid=t691386619&amp;uid=U604259313&amp;cd=cee2e0225f627f3fd09f5cc875fb6123&amp;t=1511146553"><span>0</span><br>分享</a></li>
+        </ul>
+        <!--  cancel-collection 取消收藏 -->
+        <input type="hidden" id="teacherid" value="t691386619">
+        <p class="go-search"><span></span>收 藏</p>
+        <p class="clear-search"><span>754</span>人收藏</p>
+      </div>
+    </div>
+  </div>
+  <!-- 评价模块 -->
+  <div class="s-t-list">
+    <h3 class="t-d-evaluate">评价 <span>(共21978条)</span><a href="javascript:;">查看全部评价 ></a></h3>
+    <p class="t-d-label">
+      <span>有错必究 (256)</span>
+      <span>幽默健谈 (34)</span>
+      <span>和蔼可亲 (132)</span>
+      <span>举例达人 (12)</span>
+      <span>学习鼓励师 (201)</span>
+    </p>
+    <div class="student-evaluation">
+      <p class="evaluation-text"><i></i>学员Moira <span>2017/08/28</span></p>
+      <p class="evaluation-text">评语：老师很有耐心，孩子不懂的地方会引导。要是老师能纠正一下孩子发音就更好了。</p>
+    </div>
+  </div>
+  <!-- 自我介绍 -->
+  <div class="t-d-Introduce">
+    <h3 class="t-d-evaluate">自我介绍</h3>
+    <p class="english-word">I am living in the Philippines with my wife a Philippine woman I h ave a large library for reading.We like to go hiking and swimming.</p>
+    <p class="chinese-word">翻译：我是一名毕业于美国密歇根大学，获得法学博士学位的老师，现居住在菲律宾主要教当地学生英 语课程，我接触的学生水平不同，学习习惯和方法也不一样。我喜欢教学的工作，曾经有6年教小 学生的经验。业余时间我喜欢阅读，游泳和徒步旅行。</p>
+    <p class="comment">51talk评语：Jonathan Chase老师毕业于美国密歇根大学，获得了法学的博士学位。他现在居住在菲律宾，和我们没有 时差，非常方便大家约课。他曾经在小学工作过6年时间，非常了解小学生的学习习惯和学习方法 ，他会针对不同程度的孩子制定不同的学习计划和方案，他很耐心回答每一位问题和纠正每一个 错误，相信大家会收获满满的~</p>
+  </div>
+  <!-- 预约课程 -->
+  <div class="t-d-appointment">
+    <h3 class="t-d-evaluate">预约课程</h3>
+    <form action="/reserve/course" id="reserveForm" method="post">
+      <div class="appointment-cont">
+        <div class="cont-top">
+          <ul class="cont-list-tit">
+            <li class="first"><span></span></li>
+            <li>星期一<br><span>9月6日</span></li>
+            <li>星期二<br><span>9月7日</span></li>
+            <li>星期三<br><span>9月8日</span></li>
+            <li>星期四<br><span>9月9日</span></li>
+            <li>星期五<br><span>9月10日</span></li>
+            <li>星期六<br><span>9月11日</span></li>
+            <li>星期日<br><span>9月12日</span></li>
+            <li class="last"><span></span></li>
+          </ul>
+        </div>
+        <div class="cont-bottom">
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><p class="tips-details-text">连续上2节课学习效果更好哦～ <span class="tips-details-close"></span></p><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+        </div>
+      </div>
+      <div class="appointment-cont hide">
+        <div class="cont-top">
+          <ul class="cont-list-tit">
+            <li class="first firstgo"><span></span></li>
+            <li>星期一<br><span>9月6日</span></li>
+            <li>星期二<br><span>9月7日</span></li>
+            <li>星期三<br><span>9月8日</span></li>
+            <li>星期四<br><span>9月9日</span></li>
+            <li>星期五<br><span>9月10日</span></li>
+            <li>星期六<br><span>9月11日</span></li>
+            <li>星期日<br><span>9月12日</span></li>
+            <li class="last lastgo"><span></span></li>
+          </ul>
+        </div>
+        <div class="cont-bottom">
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li><div class="class-time"><span class="time-detail">6:30-6:55</span><i></i></div><input type="checkbox" name='' id='' style='display:none'></li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+          <ul class="cont-list">
+            <li class="first"></li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li>CLOSED</li>
+            <li class="last"></li>
+          </ul>
+        </div>
+      </div>
+    </form>
+  </div> 
+  <!-- 推荐欧美外教块 -->
+  <div class="s-t-recommend">
+    <h3 class="s-t-recommend-tit">
+      <p class="recommend-left">与TA相似</p>
+      <a href="javascript:;" class="recommend-right">更多 ></a>
+    </h3>
+    <ul class="recommend-list">
+      <li>
+        <a href="javascript:;">
+          <div class="item-top-cont">
+            <div class="teacher-img">
+              <span><img src="<%=imagessrc2%>teacherDetails/teacher.jpg" alt=""></span>
+            </div>
+            <h3 class="teacher-name">Chris Marc</h3>
+            <div class="teacher-star"><span></span><span></span><span></span><span></span><span class="half"></span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="item-top-cont">
+            <div class="teacher-img">
+              <span><img src="<%=imagessrc2%>teacherDetails/teacher.jpg" alt=""></span>
+            </div>
+            <h3 class="teacher-name">Chris Marc</h3>
+            <div class="teacher-star"><span></span><span></span><span></span><span></span><span class="half"></span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="item-top-cont">
+            <div class="teacher-img">
+              <span><img src="<%=imagessrc2%>teacherDetails/teacher.jpg" alt=""></span>
+            </div>
+            <h3 class="teacher-name">Chris Marc</h3>
+            <div class="teacher-star"><span></span><span></span><span></span><span></span><span class="half"></span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="item-top-cont">
+            <div class="teacher-img">
+              <span><img src="<%=imagessrc2%>teacherDetails/teacher.jpg" alt=""></span>
+            </div>
+            <h3 class="teacher-name">Chris Marc</h3>
+            <div class="teacher-star"><span></span><span></span><span></span><span></span><span class="gray"></span></div>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:;">
+          <div class="item-top-cont">
+            <div class="teacher-img">
+              <span><img src="<%=imagessrc2%>teacherDetails/teacher.jpg" alt=""></span>
+            </div>
+            <h3 class="teacher-name">Chris Marc</h3>
+            <div class="teacher-star"><span></span><span></span><span></span><span></span><span class="half"></span></div>
+          </div>
+        </a>
+      </li>
+    </ul>  
+  </div>
+</div>
+<div class="instant-booking-bottom">
+  <div class="instant-booking"><a href="javascript:;">立即预约</a></div>
+</div>
+<!-- 收藏成功 -->
+<div class="collection-tips comon-tip">
+  <div class="teacher-bg-color"></div>
+  <div class="teacer-tips">
+    <h3 class="t-tips-tit">温馨提示 <span class="close-t-tips"></span></h3>
+    <p class="success-c">收藏成功！</p>
+    <p class="success-c">非常喜欢Evlyn老师，分享给其他小伙伴，跟我一起学英语！</p>
+    <div class="share-teacher">
+      <span>分享：</span>
+      <a href="javascritp:;" class="share-t-weixin" title="分享到微信"></a>
+      <a href="javascritp:;" class="share-t-qq" title="分享到QQ好友"></a>
+      <a href="javascritp:;" class="share-t-sina" title="分享到新浪微博"></a>
+      <a href="javascritp:;" class="share-t-qzone" title="分享到QQ空间"></a>
+    </div>  
+  </div>
+</div>
+<!-- 献花弹窗 -->
+<div class="flowers-tips comon-tip">
+  <div class="teacher-bg-color"></div>
+  <div class="flowers-cont">
+    <span class="close-t-tips"></span>
+    <p class="flowers-text">您确定要献花吗？</p>
+    <p class="flowers-text">剩余：<span>2</span>个</p>
+    <div class="flowers-btn"><span class="f-sure">确定</span><span class="f-cancel">取消</span></div>
+  </div>
+</div>
+<!-- 分享弹窗 -->
+<div class="share-tips comon-tip">
+  <div class="teacher-bg-color"></div>
+  <div class="flowers-cont">
+    <span class="close-t-tips"></span>
+    <p class="success-c">非常喜欢Evlyn老师，分享给其他小伙伴，跟我一起学英语！</p>
+    <div class="share-teacher">
+      <span>分享：</span>
+      <a href="javascritp:;" class="share-t-weixin" title="分享到微信"></a>
+      <a href="javascritp:;" class="share-t-qq" title="分享到QQ好友"></a>
+      <a href="javascritp:;" class="share-t-sina" title="分享到新浪微博"></a>
+      <a href="javascritp:;" class="share-t-qzone" title="分享到QQ空间"></a>
+    </div> 
+  </div>
+</div>
+<!-- 欧美老师视频弹窗 -->
+<div class="video-tips comon-tip">
+  <div class="teacher-bg-color"></div>
+  <div class="teacer-tips">
+    <h3 class="t-tips-tit">温馨提示 <span class="close-t-tips"></span></h3>
+    <div class="video-cont">
+      <video id="my-video" class="video-js" controls preload="auto" width="700" height="450"
+       data-setup="{}">
+        <source src="http://musicdata.baidu.com/data2/video/566644901/20fd33545ee0e3a325197108ddac579b/566644901.mp4" type='video/mp4'>
+        <!-- <source src="MY_VIDEO.webm" type='video/webm'> -->
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a web browser that
+          <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+        </p>
+      </video>
+    </div>
+  </div>
+</div>
+<% include ../common/bottom.ejs %>
+<script src="<%= jsSource2%>" id="seajsnode"></script>
+<script src="http://vjs.zencdn.net/5.8.8/video.js"></script>
+</body>
+</html>

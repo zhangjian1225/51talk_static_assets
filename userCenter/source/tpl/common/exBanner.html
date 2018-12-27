@@ -1,0 +1,36 @@
+<div class="banner">
+  <ul class="p-pic">
+    <li>
+      <a href="<%= data.activityImageInfo.exhibition_url %>" target="_blank"><img src="<%= data.activityImageInfo.exhibition_img %>" alt=""></a>
+      <div class="silderDate">
+        <span class="d-r"></span>
+        <div class="d-timer">
+          <div class="t-lt">
+            <span>购买人数：<%= data.activityImageInfo.already_num %></span>
+          </div>
+          <div class="t-rt" data-end-time="<%= data.activityImageInfo.end_time %>" data-now-time="<%= data.now_date %>" id="dataTime">
+            <span class="u-t">距结束</span>
+            <span class="u-day"><i>0</i>天</span>
+            <span class="u-hour"><i>00</i>:</span>
+            <span class="u-minute"><i>00</i>:</span>
+            <span class="u-second"><i>00</i></span>
+          </div>
+        </div>
+        <span class="d-l"></span>
+      </div>
+    </li>
+    <% if(data.PromotionImageInfo != null) {%>
+      <% for (var i = 0; i < data.PromotionImageInfo.length; i++) { %>
+        <li><a href="<%= data.PromotionImageInfo[i].link %>" target="_blank"><img src="<%= data.PromotionImageInfo[i].image %>" alt=""></a></li>
+      <% } %>
+    <% } %>
+  </ul>
+  <ul class="p-switch">
+    <li class="crt"></li>
+    <% if(data.PromotionImageInfo != null) {%>
+      <% for (var i = 0; i < data.PromotionImageInfo.length; i++) { %>
+        <li></li>
+      <% } %>
+    <% } %>
+  </ul>
+</div>

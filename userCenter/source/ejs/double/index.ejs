@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>common/index_commons.css">
+  <link rel="stylesheet" type="text/css" href="<%= cssPath2 %>double/index.css">
+  <title>Document</title>
+</head>
+<body>
+  <% include ../common/header.ejs %>
+  <div class="contentWidth">
+    <div class="double">
+      <div class="banner">
+        <div class="word">
+          <p>稍后将由来自010致电</p>
+          <p class="t">专属学习顾问为您预约课程安排老师，请保持电话畅通!</p>
+        </div>
+        <img src="<%=imagessrc2%>double/double_banner.jpg" alt="">
+      </div>
+      <div class="experi">
+        <p>您已获得外教1对1双师体验课机会！将免费获得下列体验：</p>
+        <img src="<%=imagessrc2%>double/double_img.png" alt="">
+      </div>
+    </div>
+  </div>
+  <% include ../common/bottom.ejs %>
+  <script src="<%= jsSource2%>" id="seajsnode"></script>
+</body>
+</html>

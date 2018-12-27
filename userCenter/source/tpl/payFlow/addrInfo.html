@@ -1,0 +1,55 @@
+<div class="wrab-box wrab-box2">
+        <div class="tit">以下商品以及赠品，需要您填写并确认收货地址</div>
+        <div class="wrab-mod wrab-mod1">
+                <div class="tit2 tit2-b">
+                    <ul class="f-cb">
+                        <li class="t1">
+                                类型
+                        </li>
+                        <li class="t2">
+                                名称
+                        </li>
+                        <li class="t3">
+                                数量
+                        </li>
+                    </ul>
+                </div>
+                <div class="package-list">
+                    <div>
+                        <dl class="wrap-list"  id="goodsTable">
+                            <%for(var item in point){%>
+                                <%if(point[item].point_type=="microphone" || point[item].point_type=="book"){%>
+                                <dd class="item">
+                                        <ul class="f-cb">
+                                                <li class="t1">
+                                                        <dl class="m-des">
+                                                            <%if(point[item].point_type=="book"){%>
+                                                                <dt>配套教材</dt>
+                                                            <%}else{%>
+                                                                <dt>耳机</dt>
+                                                            <%}%>
+                                                        </dl>
+                                                </li>
+                                                <li class="t2">
+                                                        <dl class="m-des">
+                                                                <dt><%= point[item].name%></dt>
+                                                        </dl>
+                                                </li>
+                                                <li class="t3">
+                                                        <dl class="m-des">
+                                                                <dt><%=point[item].point_value%></dt>
+                                                        </dl>
+                                                </li>
+                                            </ul>
+                                </dd>
+                                <%}%>
+                            <%}%>
+                        </dl>
+                    </div>
+                </div>
+                <div id="address-box">
+
+                </div>
+               
+            </div>
+    </div>
