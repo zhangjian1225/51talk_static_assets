@@ -1,1 +1,0 @@
-!function(e,o){"object"==typeof module&&module.exports?module.exports={}:"function"==typeof define?define(o):{}}("object"==typeof window&&window,function(){return{}});

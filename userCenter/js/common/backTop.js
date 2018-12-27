@@ -1,1 +1,0 @@
-"use strict";define("common/backTop",[""],function(o,n,t){var c;(c=$(".top-btn")).on("click",function(){return $("html, body").animate({scrollTop:$($(this).attr("href")).offset().top},500),!1}),$(window).on("scroll",function(){500<$(window).scrollTop()?c.fadeIn():c.fadeOut()})});

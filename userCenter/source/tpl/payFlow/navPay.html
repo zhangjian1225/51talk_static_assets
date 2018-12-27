@@ -1,7 +1,0 @@
-<li class="allMoney active" flage="allMoney"  onclick = "__sdonclick('payall');" data-source='<%=allMoney%>'>全额支付</li>
-<%if(pay.installment){%>
-<li class="installment" onclick = "__sdonclick('credit');" flage="installment" data-source='<%=installment%>'>信用卡分期</li>
-<%}%>
-<%if(pay.bank){%>
-<li class="huikuan" onclick = "__sdonclick('remit');" flage="huikuan"  data-source='<%=huikuan%>'>汇款转账</li>
-<%}%>
